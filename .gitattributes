@@ -5,3 +5,6 @@
 *.twbx binary
 *.sqlite binary
 *.png binary
+
+# Count analytical SQL in GitHub language statistics; source seed data stays excluded.
+sql/** linguist-detectable=true
