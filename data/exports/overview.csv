@@ -1,0 +1,2 @@
+period_start,period_end,orders,purchasing_customers,gross_value,returned_value,retained_value,returned_orders,order_return_rate,value_return_rate,orders_with_lines,orders_missing_lines,gross_aov_priced_orders,chronology_issues
+2023-04-15,2025-04-14,1000,199,2757346.1,708286.76,2049059.34,249,0.249,0.256873,853,147,3232.53,363

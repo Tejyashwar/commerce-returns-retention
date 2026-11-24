@@ -1,0 +1,26 @@
+month,orders,gross_value,retained_value,returned_value,return_rate,coverage
+2023-04-01,22,39713.09,34769.35,4943.74,0.136364,Partial boundary month
+2023-05-01,51,124524.86,71052.03,53472.83,0.333333,Full calendar month within coverage
+2023-06-01,52,117307.11,79669.12,37637.99,0.230769,Full calendar month within coverage
+2023-07-01,32,64728.89,51027.37,13701.52,0.1875,Full calendar month within coverage
+2023-08-01,47,151847.69,136022.56,15825.13,0.12766,Full calendar month within coverage
+2023-09-01,38,88584.98,53577.52,35007.46,0.263158,Full calendar month within coverage
+2023-10-01,37,100582.81,73824.3,26758.51,0.324324,Full calendar month within coverage
+2023-11-01,45,131482.08,106983.63,24498.45,0.222222,Full calendar month within coverage
+2023-12-01,45,131766.07,110542.13,21223.94,0.2,Full calendar month within coverage
+2024-01-01,44,144841.63,120200.94,24640.69,0.272727,Full calendar month within coverage
+2024-02-01,32,112751.83,91301.3,21450.53,0.15625,Full calendar month within coverage
+2024-03-01,38,102348.75,64645.58,37703.17,0.368421,Full calendar month within coverage
+2024-04-01,40,109756.05,78221.17,31534.88,0.25,Full calendar month within coverage
+2024-05-01,44,142083.15,92734.26,49348.89,0.340909,Full calendar month within coverage
+2024-06-01,40,126559.3,100686.58,25872.72,0.225,Full calendar month within coverage
+2024-07-01,36,109984.79,78379.86,31604.93,0.277778,Full calendar month within coverage
+2024-08-01,44,118825.33,71569.31,47256.02,0.340909,Full calendar month within coverage
+2024-09-01,43,151940.87,115760.03,36180.84,0.27907,Full calendar month within coverage
+2024-10-01,48,101268.08,72497.76,28770.32,0.25,Full calendar month within coverage
+2024-11-01,40,101022.14,87972.93,13049.21,0.15,Full calendar month within coverage
+2024-12-01,36,90152.01,82523.78,7628.23,0.083333,Full calendar month within coverage
+2025-01-01,38,109978.5,64000.21,45978.29,0.289474,Full calendar month within coverage
+2025-02-01,41,103612.04,62012.83,41599.21,0.365854,Full calendar month within coverage
+2025-03-01,42,116875.26,99976.01,16899.25,0.238095,Full calendar month within coverage
+2025-04-01,25,64808.79,49108.78,15700.01,0.2,Partial boundary month

@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/Simranghag22/ecommerce-analysis-sql-capstone",
+  "commit": "04f0299ce7fdff88f4108a83034510f626f9b261",
+  "source_file": "ecommerce-analysis.sql",
+  "source_sha256": "11273fa9fa7058eb19701139a5762d349364f4777862c785126cc2b134458564",
+  "seed_sha256": "1629a0a459d5db3a4927c4b254794039aabf1ee47a4789e0434a571e3fdc6556",
+  "extraction": "Only CREATE TABLE and INSERT INTO statements. No original analysis queries or dashboard reused."
+}

@@ -1,0 +1,14 @@
+name: Validate SQL and Tableau project
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Rebuild SQL exports and artifacts
+        run: python scripts/build.py
+      - name: Test boundary cases and Tableau package
+        run: python -m unittest discover -s tests -v

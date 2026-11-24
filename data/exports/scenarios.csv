@@ -1,0 +1,4 @@
+reduction_fraction,baseline_returned_value,illustrative_value_preserved
+0.05,708286.76,35414.34
+0.1,708286.76,70828.68
+0.2,708286.76,141657.35

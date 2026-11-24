@@ -1,0 +1,4 @@
+activity_segment,customers,orders,retained_value,gross_value,order_return_rate,retained_value_per_customer
+Active: 0-90 days,99,562,1199759.59,1594468.22,0.261566,12118.78
+Cooling: 91-180 days,39,197,369993.08,504436.46,0.218274,9487.0
+Inactive: 181+ days,61,241,479306.67,658441.42,0.244813,7857.49

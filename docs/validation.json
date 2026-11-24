@@ -1,0 +1,84 @@
+{
+  "engine": "SQLite 3.50.4",
+  "passed": 16,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "Foreign key integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "Database integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "Order and line grain preserved",
+      "status": "PASS"
+    },
+    {
+      "check": "Missing-line orders retained with unknown amounts",
+      "status": "PASS"
+    },
+    {
+      "check": "Positive prices and quantities; binary return flag",
+      "status": "PASS"
+    },
+    {
+      "check": "Gross value reconciles to independent Decimal raw-line sum",
+      "status": "PASS"
+    },
+    {
+      "check": "Returned value reconciles to raw order flags",
+      "status": "PASS"
+    },
+    {
+      "check": "Gross = retained + returned to the cent",
+      "status": "PASS"
+    },
+    {
+      "check": "monthly retained value reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "category retained value reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "region retained value reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "segments retained value reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "90-day eligible population independently reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "90-day repeat numerator independently reconciles",
+      "status": "PASS"
+    },
+    {
+      "check": "Ratios bounded and eligible repeat count valid",
+      "status": "PASS"
+    },
+    {
+      "check": "Chronology warning independently reconciles",
+      "status": "PASS"
+    }
+  ],
+  "warnings": [
+    {
+      "issue": "Orders before registration",
+      "count": 363,
+      "treatment": "Retained and flagged. Registration cohorts not used."
+    },
+    {
+      "issue": "Orders without order lines",
+      "count": 147,
+      "treatment": "Included in order and customer counts. Amounts remain NULL; value metrics cover recorded lines only."
+    }
+  ],
+  "tableau": "XML/package checks run by tests/test_project.py; native Desktop verification recorded in docs/QA.md."
+}

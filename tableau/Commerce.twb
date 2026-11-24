@@ -1,0 +1,1408 @@
+<?xml version='1.0' encoding='utf-8'?>
+<workbook original-version="18.1" source-build="2026.3.0" source-platform="mac" version="18.1">
+  <preferences>
+    <preference name="ui.encoding.shelf.height" value="24" />
+  </preferences>
+  <datasources>
+    <datasource caption="Overview" inline="true" name="textscan.overview" version="18.1">
+      <connection class="textscan" directory="Data" filename="overview.csv" password="" server="">
+        <relation name="overview#csv" table="[overview#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="date" name="period_start" ordinal="0" />
+            <column datatype="date" name="period_end" ordinal="1" />
+            <column datatype="integer" name="orders" ordinal="2" />
+            <column datatype="integer" name="purchasing_customers" ordinal="3" />
+            <column datatype="real" name="gross_value" ordinal="4" />
+            <column datatype="real" name="returned_value" ordinal="5" />
+            <column datatype="real" name="retained_value" ordinal="6" />
+            <column datatype="integer" name="returned_orders" ordinal="7" />
+            <column datatype="real" name="order_return_rate" ordinal="8" />
+            <column datatype="real" name="value_return_rate" ordinal="9" />
+            <column datatype="integer" name="orders_with_lines" ordinal="10" />
+            <column datatype="integer" name="orders_missing_lines" ordinal="11" />
+            <column datatype="real" name="gross_aov_priced_orders" ordinal="12" />
+            <column datatype="integer" name="chronology_issues" ordinal="13" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="date" name="[period_start]" caption="Period Start" role="dimension" type="ordinal" />
+      <column datatype="date" name="[period_end]" caption="Period End" role="dimension" type="ordinal" />
+      <column datatype="integer" name="[orders]" caption="Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[purchasing_customers]" caption="Purchasing Customers" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="integer" name="[returned_orders]" caption="Returned Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[order_return_rate]" caption="Order Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="real" name="[value_return_rate]" caption="Value Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="integer" name="[orders_with_lines]" caption="Orders With Lines" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[orders_missing_lines]" caption="Orders Missing Lines" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[gross_aov_priced_orders]" caption="Gross Aov Priced Orders" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="integer" name="[chronology_issues]" caption="Chronology Issues" role="measure" type="quantitative" default-format="n#,##0" />
+    </datasource>
+    <datasource caption="Monthly" inline="true" name="textscan.monthly" version="18.1">
+      <connection class="textscan" directory="Data" filename="monthly.csv" password="" server="">
+        <relation name="monthly#csv" table="[monthly#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="date" name="month" ordinal="0" />
+            <column datatype="integer" name="orders" ordinal="1" />
+            <column datatype="real" name="gross_value" ordinal="2" />
+            <column datatype="real" name="retained_value" ordinal="3" />
+            <column datatype="real" name="returned_value" ordinal="4" />
+            <column datatype="real" name="return_rate" ordinal="5" />
+            <column datatype="string" name="coverage" ordinal="6" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="date" name="[month]" caption="Month" role="dimension" type="ordinal" />
+      <column datatype="integer" name="[orders]" caption="Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[return_rate]" caption="Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="string" name="[coverage]" caption="Coverage" role="dimension" type="nominal" />
+    </datasource>
+    <datasource caption="Category" inline="true" name="textscan.category" version="18.1">
+      <connection class="textscan" directory="Data" filename="category.csv" password="" server="">
+        <relation name="category#csv" table="[category#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="string" name="category" ordinal="0" />
+            <column datatype="integer" name="orders_with_category" ordinal="1" />
+            <column datatype="integer" name="returned_orders" ordinal="2" />
+            <column datatype="integer" name="units" ordinal="3" />
+            <column datatype="real" name="gross_value" ordinal="4" />
+            <column datatype="real" name="returned_value" ordinal="5" />
+            <column datatype="real" name="retained_value" ordinal="6" />
+            <column datatype="real" name="value_return_rate" ordinal="7" />
+            <column datatype="integer" name="returned_value_rank" ordinal="8" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="string" name="[category]" caption="Category" role="dimension" type="nominal" />
+      <column datatype="integer" name="[orders_with_category]" caption="Orders With Category" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[returned_orders]" caption="Returned Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[units]" caption="Units" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[value_return_rate]" caption="Value Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="integer" name="[returned_value_rank]" caption="Returned Value Rank" role="measure" type="quantitative" default-format="n#,##0.00" />
+    </datasource>
+    <datasource caption="Region" inline="true" name="textscan.region" version="18.1">
+      <connection class="textscan" directory="Data" filename="region.csv" password="" server="">
+        <relation name="region#csv" table="[region#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="string" name="region" ordinal="0" />
+            <column datatype="string" name="country" ordinal="1" />
+            <column datatype="integer" name="orders" ordinal="2" />
+            <column datatype="integer" name="returned_orders" ordinal="3" />
+            <column datatype="real" name="gross_value" ordinal="4" />
+            <column datatype="real" name="returned_value" ordinal="5" />
+            <column datatype="real" name="retained_value" ordinal="6" />
+            <column datatype="real" name="order_return_rate" ordinal="7" />
+            <column datatype="real" name="value_return_rate" ordinal="8" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="string" name="[region]" caption="Region" role="dimension" type="nominal" />
+      <column datatype="string" name="[country]" caption="Country" role="dimension" type="nominal" />
+      <column datatype="integer" name="[orders]" caption="Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[returned_orders]" caption="Returned Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[order_return_rate]" caption="Order Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="real" name="[value_return_rate]" caption="Value Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+    </datasource>
+    <datasource caption="Segments" inline="true" name="textscan.segments" version="18.1">
+      <connection class="textscan" directory="Data" filename="segments.csv" password="" server="">
+        <relation name="segments#csv" table="[segments#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="string" name="activity_segment" ordinal="0" />
+            <column datatype="integer" name="customers" ordinal="1" />
+            <column datatype="integer" name="orders" ordinal="2" />
+            <column datatype="real" name="retained_value" ordinal="3" />
+            <column datatype="real" name="gross_value" ordinal="4" />
+            <column datatype="real" name="order_return_rate" ordinal="5" />
+            <column datatype="real" name="retained_value_per_customer" ordinal="6" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="string" name="[activity_segment]" caption="Activity Segment" role="dimension" type="nominal" />
+      <column datatype="integer" name="[customers]" caption="Customers" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[orders]" caption="Orders" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" default-format="n#,##0.00" />
+      <column datatype="real" name="[order_return_rate]" caption="Order Return Rate" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="real" name="[retained_value_per_customer]" caption="Retained Value Per Customer" role="measure" type="quantitative" default-format="n#,##0.00" />
+    </datasource>
+    <datasource caption="Repeat 90D" inline="true" name="textscan.repeat_90d" version="18.1">
+      <connection class="textscan" directory="Data" filename="repeat_90d.csv" password="" server="">
+        <relation name="repeat_90d#csv" table="[repeat_90d#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="string" name="acquisition_quarter" ordinal="0" />
+            <column datatype="integer" name="customers" ordinal="1" />
+            <column datatype="integer" name="eligible_customers" ordinal="2" />
+            <column datatype="integer" name="repeat_customers_90d" ordinal="3" />
+            <column datatype="real" name="repeat_rate_90d" ordinal="4" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="string" name="[acquisition_quarter]" caption="Acquisition Quarter" role="dimension" type="nominal" />
+      <column datatype="integer" name="[customers]" caption="Customers" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[eligible_customers]" caption="Eligible Customers" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[repeat_customers_90d]" caption="Repeat Customers 90D" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[repeat_rate_90d]" caption="Repeat Rate 90D" role="measure" type="quantitative" default-format="p0.0%" />
+    </datasource>
+    <datasource caption="Retention Summary" inline="true" name="textscan.retention_summary" version="18.1">
+      <connection class="textscan" directory="Data" filename="retention_summary.csv" password="" server="">
+        <relation name="retention_summary#csv" table="[retention_summary#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_US" separator="," text-qualifier="&quot;">
+            <column datatype="integer" name="purchasing_customers" ordinal="0" />
+            <column datatype="integer" name="repeat_customers_all_time" ordinal="1" />
+            <column datatype="real" name="repeat_share_all_time" ordinal="2" />
+            <column datatype="integer" name="eligible_customers_90d" ordinal="3" />
+            <column datatype="integer" name="repeat_customers_90d" ordinal="4" />
+            <column datatype="real" name="repeat_rate_90d" ordinal="5" />
+            <column datatype="integer" name="winback_review_customers" ordinal="6" />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes" />
+      <column datatype="integer" name="[purchasing_customers]" caption="Purchasing Customers" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[repeat_customers_all_time]" caption="Repeat Customers All Time" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[repeat_share_all_time]" caption="Repeat Share All Time" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="integer" name="[eligible_customers_90d]" caption="Eligible Customers 90D" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="integer" name="[repeat_customers_90d]" caption="Repeat Customers 90D" role="measure" type="quantitative" default-format="n#,##0" />
+      <column datatype="real" name="[repeat_rate_90d]" caption="Repeat Rate 90D" role="measure" type="quantitative" default-format="p0.0%" />
+      <column datatype="integer" name="[winback_review_customers]" caption="Winback Review Customers" role="measure" type="quantitative" default-format="n#,##0" />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="Gross value (CU)">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Gross value (CU)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Overview" name="textscan.overview" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.overview">
+            <column datatype="real" name="[gross_value]" caption="Gross Value" role="measure" type="quantitative" />
+            <column-instance column="[gross_value]" derivation="Sum" name="[sum:gross_value:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.overview].[sum:gross_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.overview].[sum:gross_value:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Retained value (CU)">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Retained value (CU)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Overview" name="textscan.overview" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.overview">
+            <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" />
+            <column-instance column="[retained_value]" derivation="Sum" name="[sum:retained_value:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.overview].[sum:retained_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.overview].[sum:retained_value:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Returned value (CU)">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Returned value (CU)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Overview" name="textscan.overview" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.overview">
+            <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" />
+            <column-instance column="[returned_value]" derivation="Sum" name="[sum:returned_value:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.overview].[sum:returned_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.overview].[sum:returned_value:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#cd5b45" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Order return rate">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Order return rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Overview" name="textscan.overview" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.overview">
+            <column datatype="real" name="[order_return_rate]" caption="Order Return Rate" role="measure" type="quantitative" />
+            <column-instance column="[order_return_rate]" derivation="Sum" name="[sum:order_return_rate:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.overview].[sum:order_return_rate:qk]" value="p0.0%" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.overview].[sum:order_return_rate:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#cd5b45" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Monthly retained value">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Monthly retained value</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Monthly" name="textscan.monthly" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.monthly">
+            <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" />
+            <column datatype="date" name="[month]" caption="Month" role="dimension" type="ordinal" />
+            <column-instance column="[retained_value]" derivation="Sum" name="[sum:retained_value:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[month]" derivation="None" name="[none:month:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.monthly].[sum:retained_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Line" />
+            <encodings />
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="false" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.monthly].[sum:retained_value:qk]</rows>
+        <cols>[textscan.monthly].[none:month:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Returned value by category">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Returned value by category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Category" name="textscan.category" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.category">
+            <column datatype="real" name="[returned_value]" caption="Returned Value" role="measure" type="quantitative" />
+            <column datatype="string" name="[category]" caption="Category" role="dimension" type="nominal" />
+            <column-instance column="[returned_value]" derivation="Sum" name="[sum:returned_value:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[category]" derivation="None" name="[none:category:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.category].[sum:returned_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.category].[sum:returned_value:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#cd5b45" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.category].[none:category:nk]</rows>
+        <cols>[textscan.category].[sum:returned_value:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Region order return rate">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Region order return rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Region" name="textscan.region" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.region">
+            <column datatype="real" name="[order_return_rate]" caption="Order Return Rate" role="measure" type="quantitative" />
+            <column datatype="string" name="[region]" caption="Region" role="dimension" type="nominal" />
+            <column-instance column="[order_return_rate]" derivation="Sum" name="[sum:order_return_rate:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[region]" derivation="None" name="[none:region:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.region].[sum:order_return_rate:qk]" value="p0.0%" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.region].[sum:order_return_rate:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#cd5b45" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.region].[none:region:nk]</rows>
+        <cols>[textscan.region].[sum:order_return_rate:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Category value return rate">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Category value return rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Category" name="textscan.category" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.category">
+            <column datatype="real" name="[value_return_rate]" caption="Value Return Rate" role="measure" type="quantitative" />
+            <column datatype="string" name="[category]" caption="Category" role="dimension" type="nominal" />
+            <column-instance column="[value_return_rate]" derivation="Sum" name="[sum:value_return_rate:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[category]" derivation="None" name="[none:category:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.category].[sum:value_return_rate:qk]" value="p0.0%" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.category].[sum:value_return_rate:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#cd5b45" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.category].[none:category:nk]</rows>
+        <cols>[textscan.category].[sum:value_return_rate:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Purchasing customers">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Purchasing customers</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Retention Summary" name="textscan.retention_summary" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.retention_summary">
+            <column datatype="integer" name="[purchasing_customers]" caption="Purchasing Customers" role="measure" type="quantitative" />
+            <column-instance column="[purchasing_customers]" derivation="Sum" name="[sum:purchasing_customers:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.retention_summary].[sum:purchasing_customers:qk]" value="n#,##0" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.retention_summary].[sum:purchasing_customers:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="90-day repeat rate">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">90-day repeat rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Retention Summary" name="textscan.retention_summary" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.retention_summary">
+            <column datatype="real" name="[repeat_rate_90d]" caption="Repeat Rate 90D" role="measure" type="quantitative" />
+            <column-instance column="[repeat_rate_90d]" derivation="Sum" name="[sum:repeat_rate_90d:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.retention_summary].[sum:repeat_rate_90d:qk]" value="p0.0%" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.retention_summary].[sum:repeat_rate_90d:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Eligible customers">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Eligible customers</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Retention Summary" name="textscan.retention_summary" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.retention_summary">
+            <column datatype="integer" name="[eligible_customers_90d]" caption="Eligible Customers 90D" role="measure" type="quantitative" />
+            <column-instance column="[eligible_customers_90d]" derivation="Sum" name="[sum:eligible_customers_90d:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.retention_summary].[sum:eligible_customers_90d:qk]" value="n#,##0" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.retention_summary].[sum:eligible_customers_90d:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Win-back review">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Win-back review</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Retention Summary" name="textscan.retention_summary" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.retention_summary">
+            <column datatype="integer" name="[winback_review_customers]" caption="Winback Review Customers" role="measure" type="quantitative" />
+            <column-instance column="[winback_review_customers]" derivation="Sum" name="[sum:winback_review_customers:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.retention_summary].[sum:winback_review_customers:qk]" value="n#,##0" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Text" />
+            <encodings>
+              <text column="[textscan.retention_summary].[sum:winback_review_customers:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="25" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name="Customers by recency">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Customers by recency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Segments" name="textscan.segments" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.segments">
+            <column datatype="integer" name="[customers]" caption="Customers" role="measure" type="quantitative" />
+            <column datatype="string" name="[activity_segment]" caption="Activity Segment" role="dimension" type="nominal" />
+            <column-instance column="[customers]" derivation="Sum" name="[sum:customers:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[activity_segment]" derivation="None" name="[none:activity_segment:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.segments].[sum:customers:qk]" value="n#,##0" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.segments].[sum:customers:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.segments].[none:activity_segment:nk]</rows>
+        <cols>[textscan.segments].[sum:customers:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Retained value by recency">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Retained value by recency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Segments" name="textscan.segments" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.segments">
+            <column datatype="real" name="[retained_value]" caption="Retained Value" role="measure" type="quantitative" />
+            <column datatype="string" name="[activity_segment]" caption="Activity Segment" role="dimension" type="nominal" />
+            <column-instance column="[retained_value]" derivation="Sum" name="[sum:retained_value:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[activity_segment]" derivation="None" name="[none:activity_segment:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.segments].[sum:retained_value:qk]" value="n#,##0.00" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.segments].[sum:retained_value:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.segments].[none:activity_segment:nk]</rows>
+        <cols>[textscan.segments].[sum:retained_value:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="90-day repeat by cohort">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">90-day repeat by cohort</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Repeat 90D" name="textscan.repeat_90d" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.repeat_90d">
+            <column datatype="real" name="[repeat_rate_90d]" caption="Repeat Rate 90D" role="measure" type="quantitative" />
+            <column datatype="string" name="[acquisition_quarter]" caption="Acquisition Quarter" role="dimension" type="nominal" />
+            <column-instance column="[repeat_rate_90d]" derivation="Sum" name="[sum:repeat_rate_90d:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[acquisition_quarter]" derivation="None" name="[none:acquisition_quarter:nk]" pivot="key" type="nominal" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.repeat_90d].[sum:repeat_rate_90d:qk]" value="p0.0%" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <text column="[textscan.repeat_90d].[sum:repeat_rate_90d:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="true" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.repeat_90d].[none:acquisition_quarter:nk]</rows>
+        <cols>[textscan.repeat_90d].[sum:repeat_rate_90d:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name="Monthly orders">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#122d3f" fontsize="12">Monthly orders</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Monthly" name="textscan.monthly" />
+          </datasources>
+          <datasource-dependencies datasource="textscan.monthly">
+            <column datatype="integer" name="[orders]" caption="Orders" role="measure" type="quantitative" />
+            <column datatype="date" name="[month]" caption="Month" role="dimension" type="ordinal" />
+            <column-instance column="[orders]" derivation="Sum" name="[sum:orders:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[month]" derivation="None" name="[none:month:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="cell">
+            <format attr="text-format" field="[textscan.monthly].[sum:orders:qk]" value="n#,##0" />
+          </style-rule>
+          <style-rule element="worksheet">
+            <format attr="font-family" value="Arial" />
+            <format attr="display-field-labels" scope="cols" value="false" />
+            <format attr="display-field-labels" scope="rows" value="false" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Line" />
+            <encodings />
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-color" value="#167d8d" />
+                <format attr="mark-labels-show" value="false" />
+                <format attr="font-size" value="10" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.monthly].[sum:orders:qk]</rows>
+        <cols>[textscan.monthly].[none:month:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="01 Sales and Returns">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#ffffff" fontsize="14">SALES &amp; RETURNS | Recorded lines (CU); 147 orders lack amounts | Boundary months partial</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight="700" maxwidth="1100" minheight="700" minwidth="1100" sizing-mode="fixed" />
+      <zones>
+        <zone h="11500" id="1" type-v2="title" w="100000" x="0" y="0">
+          <zone-style>
+            <format attr="background-color" value="#122d3f" />
+            <format attr="padding" value="16" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="2" name="Gross value (CU)" w="23000" x="1500" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="3" name="Retained value (CU)" w="23000" x="26000" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="4" name="Returned value (CU)" w="23000" x="50500" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="5" name="Order return rate" w="23000" x="75000" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33000" id="6" name="Monthly retained value" w="58000" x="1500" y="28500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33000" id="7" name="Returned value by category" w="37000" x="61500" y="28500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33500" id="8" name="Region order return rate" w="58000" x="1500" y="64000">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33500" id="9" name="Category value return rate" w="37000" x="61500" y="64000">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+    <dashboard name="02 Customer Retention">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold="true" fontcolor="#ffffff" fontsize="14">CUSTOMER RETENTION | As of 14 Apr 2025 | Complete 90-day follow-up only</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight="700" maxwidth="1100" minheight="700" minwidth="1100" sizing-mode="fixed" />
+      <zones>
+        <zone h="11500" id="1" type-v2="title" w="100000" x="0" y="0">
+          <zone-style>
+            <format attr="background-color" value="#122d3f" />
+            <format attr="padding" value="16" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="2" name="Purchasing customers" w="23000" x="1500" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="3" name="90-day repeat rate" w="23000" x="26000" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="4" name="Eligible customers" w="23000" x="50500" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="12500" id="5" name="Win-back review" w="23000" x="75000" y="13500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33000" id="6" name="Customers by recency" w="58000" x="1500" y="28500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33000" id="7" name="Retained value by recency" w="37000" x="61500" y="28500">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33500" id="8" name="90-day repeat by cohort" w="58000" x="1500" y="64000">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+        <zone h="33500" id="9" name="Monthly orders" w="37000" x="61500" y="64000">
+          <zone-style>
+            <format attr="background-color" value="#ffffff" />
+            <format attr="border-color" value="#dce6eb" />
+            <format attr="border-style" value="solid" />
+            <format attr="border-width" value="1" />
+            <format attr="margin" value="4" />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height="36">
+    <window class="dashboard" name="01 Sales and Returns">
+      <viewpoints>
+        <viewpoint name="Gross value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Retained value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Returned value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Order return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Monthly retained value">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Returned value by category">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Region order return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Category value return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Purchasing customers">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="90-day repeat rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Eligible customers">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Win-back review">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Customers by recency">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Retained value by recency">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="90-day repeat by cohort">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Monthly orders">
+          <zoom type="entire-view" />
+        </viewpoint>
+      </viewpoints>
+      <active id="-1" />
+      <device-preview />
+    </window>
+    <window class="dashboard" name="02 Customer Retention">
+      <viewpoints>
+        <viewpoint name="Gross value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Retained value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Returned value (CU)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Order return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Monthly retained value">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Returned value by category">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Region order return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Category value return rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Purchasing customers">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="90-day repeat rate">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Eligible customers">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Win-back review">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Customers by recency">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Retained value by recency">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="90-day repeat by cohort">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="Monthly orders">
+          <zoom type="entire-view" />
+        </viewpoint>
+      </viewpoints>
+      <active id="-1" />
+      <device-preview />
+    </window>
+    <window class="worksheet" name="Gross value (CU)">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Retained value (CU)">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Returned value (CU)">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Order return rate">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Monthly retained value">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Returned value by category">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Region order return rate">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Category value return rate">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Purchasing customers">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="90-day repeat rate">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Eligible customers">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Win-back review">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Customers by recency">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Retained value by recency">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="90-day repeat by cohort">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+    <window class="worksheet" name="Monthly orders">
+      <cards />
+      <viewpoint>
+        <zoom type="entire-view" />
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails />
+</workbook>
