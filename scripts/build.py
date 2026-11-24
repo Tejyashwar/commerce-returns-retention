@@ -24,7 +24,7 @@ def build():
         headers = [d[0] for d in cursor.description]
         rows = cursor.fetchall()
         with (ROOT / 'data/exports' / (path.stem[3:] + '.csv')).open('w', newline='') as f:
-            writer = csv.writer(f)
+            writer = csv.writer(f, lineterminator='\n')
             writer.writerow(headers)
             writer.writerows(rows)
         results[path.stem[3:]] = [dict(zip(headers, row)) for row in rows]
